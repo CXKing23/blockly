@@ -1,0 +1,172 @@
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+#blocklyDiv {
+    flex: 3;
+    height: 100%;
+}
+
+#gameDiv {
+    flex: 2;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 8px;
+}
+
+.entity-stat {
+    text-align: center;
+}
+
+.entity-name {
+    font-weight: bold;
+    display: block;
+}
+
+.hp-bar-container {
+    width: 100px;
+    height: 10px;
+    background-color: #ddd;
+    margin-top: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.hp-bar {
+    height: 100%;
+    background-color: #4caf50;
+    width: 100%;
+    transition: width 0.3s;
+}
+
+.enemy-hp {
+    background-color: #f44336;
+}
+
+#hand-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    min-height: 120px;
+    padding: 10px;
+    background-color: #fafafa;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+}
+
+.card {
+    width: 80px;
+    height: 110px;
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.card-index {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    background-color: #007acc;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.card-desc {
+    font-size: 10px;
+    flex: 1;
+}
+
+.card-cost {
+    font-size: 10px;
+    text-align: right;
+    color: #555;
+}
+
+#log-container {
+    flex: 1;
+    background-color: #222;
+    color: #0f0;
+    font-family: monospace;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-y: auto;
+    font-size: 12px;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f9e;
+}
+
+button.secondary {
+    background-color: #666;
+}

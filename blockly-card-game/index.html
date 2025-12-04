@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockly Card Battler</title>
+    <!-- Blockly Core -->
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+
+    <!-- Local Files -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="toolbox_style.css">
+</head>
+<body>
+    <header>
+        <h1>Blockly Card Battler</h1>
+    </header>
+
+    <div id="main-container">
+        <div id="blocklyDiv"></div>
+        <div id="gameDiv">
+            <div class="stats-container">
+                <div class="entity-stat">
+                    <span class="entity-name">Player</span>
+                    <div id="player-hp-text">30/30</div>
+                    <div class="hp-bar-container">
+                        <div id="player-hp-bar" class="hp-bar"></div>
+                    </div>
+                </div>
+                <div class="entity-stat">
+                    <span class="entity-name">Enemy</span>
+                    <div id="enemy-hp-text">30/30</div>
+                    <div class="hp-bar-container">
+                        <div id="enemy-hp-bar" class="hp-bar enemy-hp"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Your Hand</h3>
+            <div id="hand-container">
+                <!-- Cards will be injected here -->
+            </div>
+
+            <h3>Battle Log</h3>
+            <div id="log-container">
+                <div>Welcome to the battle!</div>
+            </div>
+
+            <div class="controls">
+                <button onclick="runCode()">Run Code</button>
+                <button class="secondary" onclick="resetGame()">Reset Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toolbox Definition -->
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+        <category name="Game Actions" colour="#5C81A6">
+            <block type="play_card">
+                <value name="INDEX">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="end_turn"></block>
+        </category>
+        <category name="Game Info" colour="#5CA65C">
+            <block type="player_health"></block>
+            <block type="enemy_health"></block>
+            <block type="cards_in_hand"></block>
+        </category>
+        <category name="Logic" colour="#5C81A6">
+            <block type="controls_if"></block>
+            <block type="logic_compare"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_boolean"></block>
+        </category>
+        <category name="Loops" colour="#5CA65C">
+            <block type="controls_repeat_ext">
+                <value name="TIMES">
+                    <shadow type="math_number">
+                        <field name="NUM">3</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_whileUntil"></block>
+        </category>
+        <category name="Math" colour="#5C81A6">
+            <block type="math_number"></block>
+            <block type="math_arithmetic"></block>
+        </category>
+        <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
+    </xml>
+
+    <!-- Scripts -->
+    <script src="game_logic.js"></script>
+    <script src="game_blocks.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
