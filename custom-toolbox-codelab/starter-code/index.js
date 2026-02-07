@@ -52,7 +52,7 @@ function placeX(row, col) {
     } else {
       currentPlayer = 'O';
       document.getElementById('status').innerText = "Computer's turn (O)";
-      setTimeout(computerMove, 500);
+      computerMove();
     }
   } else {
     alert('Invalid move!');
